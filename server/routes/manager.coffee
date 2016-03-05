@@ -53,5 +53,39 @@ router.post '/', (req, res, next) ->
         console.log result
         res.status(200).json result
   )
-  
+
+# add client to manager
+
+#######
+# PUT #
+#######
+
+router.put '/:managerId/client/:clientId', (req, res, next) ->
+  managerId = req.params.managerId
+  clientId = req.params.clientId
+  async.waterfall(
+    [
+      (callback) ->
+        Manager.findOne {_id: new ObjectId managerId}, callback
+      (dbManager, callback) ->
+        if not dbManager? then res.status(400).send 'manager not found'
+        else
+          Client.findOne {_id: new ObjectId clientId}, (err, dbClient) -> callback null, dbManager, dbClient
+      (dbManager, dbClient, callback) ->
+        if not dbClient? then res.status(400).send 'client not found'
+        else
+          dbManager.clients.push new ObjectId clientId
+          dbManager.save callback
+      (savedManager, nInserted, callback) ->
+        callback null, savedManager
+    ],
+    (err, result) ->
+      if err
+        console.log err
+        res.status(500).json err
+      else
+        console.log result
+        res.status(200).json result
+  )
+
 module.exports = router

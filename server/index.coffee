@@ -15,5 +15,5 @@ models.initialize()
 app = express()
 app.use(bodyparser.json())
 app.use('/manager', require('./routes/manager.coffee'))
-
+app.use '/client', require './routes/client.coffee'
 http.createServer(app).listen(8080) 
