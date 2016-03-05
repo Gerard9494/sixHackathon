@@ -59,25 +59,19 @@
 	</div>
 </header> 
 
-<div class="container">
+<div class="container" align="center">
 	<h2 align="center">News</h2>
-  	<table class="table table-striped">
-	    <thead>
-	      <tr>
-	        <th>Link</th>
-	        <th>Title</th>
-	        <th>Text</th>
-	      </tr>
-	    </thead>
+  	<table align="center" class="table table-striped">
 	    <tbody>
-			<tr ng-repeat="new in news">
-				<td>{{new.link}}</td>
-				<td>{{new.title}}</td>
-				<td>{{new.text}}</td>
+			<tr ng-repeat="new in news" align="center"	>
+				<td>
+					<h5>{{new.title}}</h5>
+					<h6>{{new.text}}</h6>
+					<hr style="border: none; height: 0.5px; color: grey; background: grey;"/>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-	<hr style="border: none; height: 0.5px; color: grey; background: grey;"/>
 </div>
 
 
