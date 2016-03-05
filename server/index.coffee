@@ -5,7 +5,6 @@ http = require 'http'
 mongoose = require 'mongoose'
 express = require 'express'
 bodyparser = require 'body-parser'
-Cloudant = require 'cloudant'
  
 # custom
 models = require './models/index.js'

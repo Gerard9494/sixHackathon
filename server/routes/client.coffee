@@ -6,7 +6,7 @@ mongoose = require 'mongoose'
 ObjectId = mongoose.Types.ObjectId
 Manager = mongoose.model 'Manager'
 Client = mongoose.model 'Client'
-
+Cloudant = require 'cloudant'
 async = require 'async'
 
 # custom
@@ -22,9 +22,9 @@ router.get '/', (req, res, next) ->
 
   resData = []
 
-  # START HERE
-
-  # FINISH HERE
+  `// START HERE`
+  
+  `// FINISH HERE` 
 
   res.status(200).json resData
 
