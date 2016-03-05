@@ -1,49 +1,12 @@
 var App = angular.module('sixHackApp', []);
 
 App.controller('nuevaAppCtrl', ['$scope', function($scope) {
-/*
+
 	$scope.news = [
 		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship1",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship2",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship3",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship4",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship5",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship6",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		},
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship7",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
-		}
-	];*/
-	$scope.news = [
-		{
-			"title" : "North Korea sanctions: Philippines to seize cargo ship1",
-			"text" : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
-			"link" : "www.apio.com"
+			title : "North Korea sanctions: Philippines to seize cargo ship1",
+			text : "The Philippines says it has seized a North Korean ship in line with tightened UN sanctions targeting the country's nuclear programme.",
+			link : "www.apio.com"
 		}
 	];
 
