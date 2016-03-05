@@ -57,6 +57,21 @@
     return res.status(200).json(resData);
   });
 
+  router.get('/seed', function(req, res, next) {
+    var client;
+    client = new Client({
+      name: "SIXInvestor",
+      interests: ["copper", "aluminium", "zinc", "gold", "alcoa inc", "lme", "us fed"]
+    });
+    return client.save(function(error, savedClient, nInserted) {
+      if (!error) {
+        return res.status(200).send('ok');
+      } else {
+        return res.status(500).send('ops');
+      }
+    });
+  });
+
   router.post('/', function(req, res, next) {
     return async.waterfall([
       function(callback) {
