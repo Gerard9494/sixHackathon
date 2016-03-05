@@ -18,6 +18,45 @@
 
   app = express();
 
+  // Load the Cloudant library.
+  var Cloudant = require('cloudant');
+
+  var me = '6882a383-80ef-410e-b363-096a43e244c1-bluemix'; // Set this to your own account
+  var password = "a25fd8c4b426cc26a850339d7c405509630c2881f203780915755c1826d887e3";
+
+  // Initialize the library with my account.
+  var cloudant = Cloudant({account:me, password:password});
+  var kv_content = cloudant.db.use('kv_content');
+
+  //kv_content.get("0ad153c2986beb722caac1fc402adf87", function(err, data)  {
+  //  console.log("Found dog:", data);
+  //
+  //});
+  kv_content.list(function(err, body) {
+    if (!err) {
+      var key = body.rows[0].key;
+      kv_content.get(key,function(err, data)  {
+        var entities = data.features.entity;
+        entities.forEach(function(entity) {
+          /*
+           IMPORTANT VALUES:
+
+           type: 'Country',
+           relevance: '0.215293',
+           count: '1',
+           text: 'Switzerland'
+
+           var type = entity.type;
+           var relevance = entity.relevance;
+           var count = entity.count;
+           var text = entity.text;
+           */
+        });
+      });
+    }
+  });
+
+
   app.use(bodyparser.json());
 
   app.use('/manager', require('./routes/manager.js'));
