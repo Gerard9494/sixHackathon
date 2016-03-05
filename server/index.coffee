@@ -5,15 +5,17 @@ http = require 'http'
 mongoose = require 'mongoose'
 express = require 'express'
 bodyparser = require 'body-parser'
+Cloudant = require 'cloudant'
  
 # custom
 models = require './models/index.js'
+config = require './config.coffee'
 
-mongoose.connect('mongodb://localhost/six')
+mongoose.connect(config.db_path)
 models.initialize() 
 
 app = express()
 app.use(bodyparser.json())
 app.use('/manager', require('./routes/manager.js'))
 app.use '/client', require './routes/client.js'
-http.createServer(app).listen(8080) 
+http.createServer(app).listen config.port

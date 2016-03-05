@@ -38,7 +38,6 @@ router.post('/listLinks/:id', function(req, res) {
   }
 });`
 
-
 ########
 # POST #
 ########
