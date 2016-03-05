@@ -33,4 +33,25 @@ router.get '/:id', (req, res, next) ->
 # POST #
 ########
 
+# register new manager
+router.post '/', (req, res, next) ->
+  async.waterfall(
+    [
+      (callback) ->
+        manager = new Manager {
+          name: req.body.name
+        }
+        manager.save callback
+      (savedManager, nInserted, callback) ->
+        callback null, savedManager
+    ],
+    (err, result) ->
+      if err
+        console.log err
+        res.status(500).json err
+      else
+        console.log result
+        res.status(200).json result
+  )
+  
 module.exports = router

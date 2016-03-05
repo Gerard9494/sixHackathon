@@ -4,7 +4,8 @@ ObjectId = Schema.Types.ObjectId
 
 module.exports = () ->
 	ClientSchema = new Schema {
+		name: {type: String}
 		interests: [{type: String}]
 	}
-	mongoose.model 'Manager', ClientSchema, 'managers'
+	mongoose.model 'Client', ClientSchema, 'clients'
 
