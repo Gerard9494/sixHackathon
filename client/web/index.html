@@ -39,10 +39,11 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
 	<![endif]-->
 
-	 <script src="../controllers/index-ctrl.js"></script>
+
+	 <script src="controllers/index-ctrl.js"></script>
 
 	</head>
-<body ng-app='tempoTeamApp' ng-controller='nuevaAppCtrl' class="index">
+<body ng-app='sixHackApp' ng-controller='nuevaAppCtrl'>
 
 <!--==============================header=================================-->
 <header id="header">
@@ -55,8 +56,15 @@
 			</div>
 		</div>
 	</div>
-</header>
+</header> 
 
+<div class="container">
+	<h2 align="center">News</h2>
+	<tr ng-repeat="new in news">
+		  <h2 align="left">{{new.title}} {{new.text}} </h2>
+		  <hr style="border: none; height: 0.5px; color: grey; background: grey;"/>
+	</tr>
+</div>
 
 
 <script>
