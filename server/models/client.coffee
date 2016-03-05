@@ -8,4 +8,3 @@ module.exports = () ->
 		interests: [{type: String}]
 	}
 	mongoose.model 'Client', ClientSchema, 'clients'
-
