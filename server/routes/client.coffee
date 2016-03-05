@@ -9,9 +9,24 @@ Client = mongoose.model 'Client'
 
 async = require 'async'
 
+# custom
+config = require '../config.coffee'
+
 #######
 # GET #
 #######
+
+router.get '/', (req, res, next) ->
+  cloudant = Cloudant {account:config.cloudant_user, password:config.cloudant_password}
+  kv_content = cloudant.db.use('kv_content')
+
+  resData = []
+
+  # START HERE
+
+  # FINISH HERE
+
+  res.status(200).json resData
 
 ########
 # POST #
