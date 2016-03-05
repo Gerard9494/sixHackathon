@@ -2,7 +2,7 @@
 (function() {
   var models;
 
-  models = ['./manager.coffee', './client.coffee'];
+  models = ['./manager.js', './client.js'];
 
   exports.initialize = function() {
     var i, len, model, results;

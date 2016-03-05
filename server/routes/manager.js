@@ -42,6 +42,16 @@
     });
   });
 
+  // Get the links that the user is interested about
+router.post('/listLinks/:id', function(req, res) {
+  var interestedList = req.body;
+  var linksList = null;
+  for (var i=0; i<interestedList.length; ++i){
+    
+    interestedList.add(/*ask to cloudant list links*/); 
+  }
+});;
+
   router.post('/', function(req, res, next) {
     return async.waterfall([
       function(callback) {

@@ -28,7 +28,7 @@ router.get '/:id', (req, res, next) ->
 
 # given managers id and clients id, give that clients info
 
-// Get the links that the user is interested about
+`// Get the links that the user is interested about
 router.post('/listLinks/:id', function(req, res) {
   var interestedList = req.body;
   var linksList = null;
@@ -36,7 +36,7 @@ router.post('/listLinks/:id', function(req, res) {
     
     interestedList.add(/*ask to cloudant list links*/); 
   }
-});
+});`
 
 
 ########

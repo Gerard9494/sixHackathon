@@ -10,7 +10,7 @@
 
   bodyparser = require('body-parser');
 
-  models = require('./models/index.coffee');
+  models = require('./models/index.js');
 
   mongoose.connect('mongodb://localhost/six');
 
@@ -20,9 +20,9 @@
 
   app.use(bodyparser.json());
 
-  app.use('/manager', require('./routes/manager.coffee'));
+  app.use('/manager', require('./routes/manager.js'));
 
-  app.use('/client', require('./routes/client.coffee'));
+  app.use('/client', require('./routes/client.js'));
 
   http.createServer(app).listen(8080);
 
