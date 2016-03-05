@@ -8,4 +8,3 @@ module.exports = () ->
 		clients: [{type: ObjectId, ref: 'Client'}]
 	}
 	mongoose.model 'Manager', ManagerSchema, 'managers'
-
