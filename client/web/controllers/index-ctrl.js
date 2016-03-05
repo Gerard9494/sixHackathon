@@ -47,7 +47,7 @@ App.controller('nuevaAppCtrl', ['$scope', function($scope) {
 		}
 	];
 
-	console.log(news);
+	console.log($scope.news);
 
 	/*$http.get('http://localhost:8080/user/56c849f20e0a9de465f80695/jobs').then(function(res) {
 		// do stuff
