@@ -29,6 +29,30 @@
     kv_content = cloudant.db.use('kv_content');
     resData = [];
     // START HERE;
+    kv_content.list(function(err, body) {
+      if (!err) {
+        var key = body.rows[0].key;
+        kv_content.get(key,function(err, data)  {
+          var entities = data.features.entity;
+          entities.forEach(function(entity) {
+            console.log(entity.text);
+            /*
+             IMPORTANT VALUES:
+
+             type: 'Country',
+             relevance: '0.215293',
+             count: '1',
+             text: 'Switzerland'
+
+             var type = entity.type;
+             var relevance = entity.relevance;
+             var count = entity.count;
+             var text = entity.text;
+             */
+          });
+        });
+      }
+    });
     // FINISH HERE;
     return res.status(200).json(resData);
   });
