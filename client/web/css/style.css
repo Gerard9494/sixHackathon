@@ -256,7 +256,7 @@ h4 {
 h2 {
   font: 400 72px/72px 'Open Sans', sans-serif, bold;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 40px;
 }
 h2 span {
@@ -340,7 +340,7 @@ p {
     margin-top: 40px;
     font: 400 62px/62px 'Open Sans', sans-serif, bold;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   h2 span:before {
     display: none;
@@ -366,7 +366,7 @@ p {
   h2 {
     font: 400 52px/52px 'Open Sans', sans-serif, bold;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 40px;
 
   }
