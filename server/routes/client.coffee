@@ -20,13 +20,30 @@ router.get '/', (req, res, next) ->
   cloudant = Cloudant {account:config.cloudant_user, password:config.cloudant_password}
   kv_content = cloudant.db.use('kv_content')
 
-  resData = []
-
   `// START HERE`
-
-  `// FINISH HERE` 
-
-  res.status(200).json resData
+  kv_content.list (err, body) ->
+    if not err
+      key = body.rows[0].key
+      kv_content.get key, (err, data) ->
+        entities = data.features.entity
+        resData = []
+        console.log data
+        async.each(entities, (entity, callback) ->
+          console.log 'entity ' + entity
+          resEntity = {
+            type: entity.type,
+            text: entity.text
+          }
+          resData.push resEntity
+          callback()
+        , (err) ->
+          if err
+            console.log err
+            res.send(500).json err
+          else
+            res.status(200).json resData
+        )
+  `// FINISH HERE`
 
 router.get '/seed', (req, res, next) ->
   client = new Client {

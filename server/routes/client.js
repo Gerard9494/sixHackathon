@@ -21,40 +21,43 @@
   config = require('../config.coffee');
 
   router.get('/', function(req, res, next) {
-    var cloudant, kv_content, resData;
+    var cloudant, kv_content;
     cloudant = Cloudant({
       account: config.cloudant_user,
       password: config.cloudant_password
     });
     kv_content = cloudant.db.use('kv_content');
-    resData = [];
     // START HERE;
     kv_content.list(function(err, body) {
+      var key;
       if (!err) {
-        var key = body.rows[0].key;
-        kv_content.get(key,function(err, data)  {
-          var entities = data.features.entity;
-          entities.forEach(function(entity) {
-            console.log(entity.text);
-            /*
-             IMPORTANT VALUES:
-
-             type: 'Country',
-             relevance: '0.215293',
-             count: '1',
-             text: 'Switzerland'
-
-             var type = entity.type;
-             var relevance = entity.relevance;
-             var count = entity.count;
-             var text = entity.text;
-             */
+        key = body.rows[0].key;
+        return kv_content.get(key, function(err, data) {
+          var entities, resData;
+          entities = data.features.entity;
+          resData = [];
+          console.log(data);
+          return async.each(entities, function(entity, callback) {
+            var resEntity;
+            console.log('entity ' + entity);
+            resEntity = {
+              type: entity.type,
+              text: entity.text
+            };
+            resData.push(resEntity);
+            return callback();
+          }, function(err) {
+            if (err) {
+              console.log(err);
+              return res.send(500).json(err);
+            } else {
+              return res.status(200).json(resData);
+            }
           });
         });
       }
     });
-    // FINISH HERE;
-    return res.status(200).json(resData);
+    return // FINISH HERE;
   });
 
   router.get('/seed', function(req, res, next) {
