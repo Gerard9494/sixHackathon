@@ -7,8 +7,14 @@
 /*========================================================
 										Main layout styles
 =========================================================*/
+
+* {
+  box-sizing:border-box;
+  font-family:'Open Sans', sans-serif;
+}
+
 body {
-  background: #EFF5FF;
+  background: #eaeaea;
   font: 14px/24px Georgia, 'Times New Roman', Times, serif;
 }
 a {
@@ -36,7 +42,7 @@ h2 a:hover,
 h3 a:hover,
 h4 a:hover,
 h5 a:hover {
-  color: #357FFF;
+  color: #2C3E50;
 }
 * {
   -webkit-text-size-adjust: none;
@@ -55,7 +61,7 @@ h5 a:hover {
 =========================================================*/
 #header {
   padding: 20px 0;
-  background: #357FFF;
+  background: #2C3E50;
 }
 #header h1 {
   float: left;
@@ -148,7 +154,7 @@ h5 a:hover {
   position: absolute;
   top: 66px;
   left: -30px;
-  background: #357FFF;
+  background: #2C3E50;
   color: #ffffff;
   min-width: 157px;
   z-index: 999;
@@ -169,7 +175,7 @@ h5 a:hover {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom: 10px solid #357FFF;
+  border-bottom: 10px solid #2C3E50;
 }
 .sf-menu ul li {
   position: relative;
@@ -204,7 +210,7 @@ h5 a:hover {
   display: none;
 }
 .sf-menu ul ul a:hover {
-  color: #357FFF;
+  color: #2C3E50;
 }
 @media only screen and (max-width: 767px) {
   .sf-menu {
@@ -213,7 +219,7 @@ h5 a:hover {
   .select-menu {
     display: block;
     width: 100%;
-    border-color: #357FFF;
+    border-color: #2C3E50;
     color: #666;
     font-size: 16px;
     padding: 5px;
@@ -222,10 +228,10 @@ h5 a:hover {
 /* Stuck menu styles
 ========================================================*/
 .isStuck {
-  background: #357FFF;
+  background: #2C3E50;
   z-index: 9;
   padding: 0;
-  border-bottom: 1px solid #357FFF;
+  border-bottom: 1px solid #2C3E50;
 }
 .isStuck nav {
   margin-top: 17px !important;
@@ -295,7 +301,7 @@ h5 {
   color: #333333;
 }
 .h5__mod {
-  color: #357FFF;
+  color: #2C3E50;
 }
 p {
   font: 14px/24px 'Open Sans', sans-serif;
@@ -560,7 +566,7 @@ p {
   font-size: 35px;
   text-align: center;
   color: #ffffff;
-  background: #357FFF;
+  background: #2C3E50;
   display: block;
   font-family: 'Open Sans', sans-serif;
 }
@@ -628,7 +634,7 @@ p {
 }
 .index-3 .block-1 li a:hover {
   text-decoration: none;
-  color: #357FFF;
+  color: #2C3E50;
 }
 .index-3 .block-1 article {
   margin-bottom: 45px;
@@ -666,7 +672,7 @@ p {
   right: 30px;
 }
 .index-4 p a {
-  color: #357FFF;
+  color: #2C3E50;
 }
 .index-4 p a:hover {
   color: #7d261a;
@@ -694,7 +700,7 @@ p {
   color: #727070;
 }
 .index-4 .block-2 .mail:hover {
-  color: #357FFF;
+  color: #2C3E50;
 }
 @media only screen and (max-width: 767px) {
   .index-4 h2 {
@@ -705,7 +711,7 @@ p {
 										FOOTER styles
 =========================================================*/
 #footer {
-  background: #357FFF;
+  background: #2C3E50;
   padding: 100px 0 0;
   color: #000000;
 }
@@ -767,7 +773,7 @@ p {
 ========================================================*/
 #toTop {
   display: none;
-  background: #357FFF;
+  background: #2C3E50;
   text-decoration: none;
   position: fixed;
   bottom: 80px;
@@ -829,3 +835,54 @@ p {
   }
 }
 /*Core variables and mixins*/
+
+#portfolio  {
+  padding:50px;
+  width:100%;
+}
+
+#portfolio-list {
+  text-align:center;
+  width:100%;
+}
+
+#portfolio-list > li {
+  text-align:center;
+  margin-right:20px;
+  display:inline-block;
+  padding:30px;
+  margin-top:50px;
+  background:white;
+  box-shadow:0px 2px 4px rgba(50,50,50,0.3);
+}
+
+.portfolio-title  {
+  font-weight:700;
+  font-family:'Calibri', sans-serif;
+  text-transform: uppercase;
+  font-size:1.2em;
+  margin-top:25px;
+}
+
+.portfolio-img  {
+  width:auto;
+  height:100px;
+}
+
+#portfolio-list > li:hover {
+  box-shadow:0px 4px 8px rgba(50,50,50,0.5);
+}
+
+
+section.module  {
+  width:100%;
+  padding:50px;
+}
+
+#newssection > div  {
+  width:80%;
+  margin:0 auto 0 auto;
+  background:white;
+  padding:50px;
+  box-shadow:0px 2px 4px rgba(50,50,50,0.3);
+}

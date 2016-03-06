@@ -52,13 +52,60 @@
 		<div class="container">
 			<div class="row">
 				<div class="grid_12">
-					<h1><a href="index.html">AppName</a><span>what you want to read</span></h1>
+					<h1><a href="index.html">Crunch!</a><span>what you want to read</span></h1>
 				</div>
 			</div>
 		</div>
 	</div>
-</header> 
+</header>
 
+<section class="module" id="portfolio">
+	<ul id="portfolio-list">
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/copper.jpg"></li>
+				<li class="portfolio-title">copper</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/Aluminum.jpg"></li>
+				<li class="portfolio-title">Aluminum</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/zinc.jpg"></li>
+				<li class="portfolio-title">Zinc</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/gold.jpg"></li>
+				<li class="portfolio-title">Gold</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/Alcoa-logo.jpg"></li>
+				<li class="portfolio-title">Alcoa Inc</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/lme.jpg"></li>
+				<li class="portfolio-title">LME</li>
+			</ul>
+		</li>
+		<li>
+			<ul class="portfoliocard">
+				<li class="portfolio-pic"><img class="portfolio-img" src="images/us-fed.gif"></li>
+				<li class="portfolio-title">US FED</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+<section class="module" id="newssection">
 <div class="container" align="center">
 	<h2 align="center">News</h2>
   	<table align="center" class="table table-striped">
@@ -66,8 +113,7 @@
 			<tr ng-repeat="new in news" align="center"	>
 				<td>
 					<span style="padding-left:20px"></span>
-					<h5>{{new.title}}</h5>
-					<h6 style="color: #515151">{{new.text}}</h6>
+					<a href="{{new.link}}" style="color: #515151">{{new.link}}</a>
 					<span style="padding-left:20px"></span>
 					<hr style="border: none; height: 0.5px; color: grey; background: grey;"/>
 				</td>
@@ -75,6 +121,7 @@
 		</tbody>
 	</table>
 </div>
+</section>
 
 
 <script>
