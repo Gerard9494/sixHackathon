@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8119782-6477-4823-a388-08a5ef6224ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/web/css/style.css" afterPath="$PROJECT_DIR$/client/web/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/web/index.html" afterPath="$PROJECT_DIR$/client/web/index.html" />
     </list>
     <ignored path="sixHackathon.iws" />
@@ -74,25 +73,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8297873">
-              <caret line="108" column="21" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.7058824">
+              <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
               <folding>
-                <marker date="1457266006000" expanded="false" signature="968:1020" placeholder="..." />
-                <marker date="1457266006000" expanded="true" signature="1021:1348" placeholder="..." />
-                <marker date="1457266006000" expanded="true" signature="1134:1340" placeholder="..." />
+                <marker date="1457266283000" expanded="false" signature="968:1020" placeholder="..." />
+                <marker date="1457266283000" expanded="true" signature="1021:1348" placeholder="..." />
+                <marker date="1457266283000" expanded="true" signature="1134:1340" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31746033">
-              <caret line="845" column="10" selection-start-line="845" selection-start-column="10" selection-end-line="845" selection-end-column="10" />
+            <state vertical-scroll-proportion="-168.54546">
+              <caret line="841" column="1" selection-start-line="841" selection-start-column="1" selection-end-line="841" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -111,8 +110,8 @@
         <option value="$PROJECT_DIR$/server/config.coffee" />
         <option value="$PROJECT_DIR$/server/cloudant_temp.txt" />
         <option value="$PROJECT_DIR$/server/routes/client.js" />
-        <option value="$PROJECT_DIR$/client/web/index.html" />
         <option value="$PROJECT_DIR$/client/web/css/style.css" />
+        <option value="$PROJECT_DIR$/client/web/index.html" />
       </list>
     </option>
   </component>
@@ -456,23 +455,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/index.html">
+    <entry file="file://$PROJECT_DIR$/client/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8297873">
-          <caret line="108" column="21" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="21" />
-          <folding>
-            <marker date="1457266006000" expanded="false" signature="968:1020" placeholder="..." />
-            <marker date="1457266006000" expanded="true" signature="1021:1348" placeholder="..." />
-            <marker date="1457266006000" expanded="true" signature="1134:1340" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-168.54546">
+          <caret line="841" column="1" selection-start-line="841" selection-start-column="1" selection-end-line="841" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/css/style.css">
+    <entry file="file://$PROJECT_DIR$/client/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31746033">
-          <caret line="845" column="10" selection-start-line="845" selection-start-column="10" selection-end-line="845" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.7058824">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+          <folding>
+            <marker date="1457266283000" expanded="false" signature="968:1020" placeholder="..." />
+            <marker date="1457266283000" expanded="true" signature="1021:1348" placeholder="..." />
+            <marker date="1457266283000" expanded="true" signature="1134:1340" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
