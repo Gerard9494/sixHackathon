@@ -115,7 +115,7 @@
 }
 .owl-carousel .owl-prev:hover:before,
 .owl-carousel .owl-next:hover:before { 
-	color: #d94d3a;
+	color: #357FFF;
 }
 @media only screen and (max-width: 980px) {
 	.owl-carousel .owl-controls {
