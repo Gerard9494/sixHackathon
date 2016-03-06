@@ -20,6 +20,8 @@
 
   config = require('../config.coffee');
 
+  var strsplit = require('strsplit');
+
   router.get('/', function(req, res, next) {
     var cloudant, kv_content;
     cloudant = Cloudant({
@@ -28,36 +30,44 @@
     });
     kv_content = cloudant.db.use('kv_content');
     // START HERE;
-    kv_content.list(function(err, body) {
-      var key;
+    Client.findOne({name: "SIXInvestor"}, function(err, client) { 
+      intsts = client.interests.toString();
+      interests = strsplit(intsts, ',');
+      console.log(interests);
       if (!err) {
-        key = body.rows[0].key;
-        return kv_content.get(key, function(err, data) {
-          var entities, resData;
-          entities = data.features.entity;
+        kv_content.list(function(err, body) {
+        var key;
+        if (!err) {
           resData = [];
-          return async.each(entities, function(entity, callback) {
-            var resEntity;
-            console.log('entity ' + entity);
-            resEntity = {
-              type: entity.type,
-              text: entity.text
-            };
-            resData.push(resEntity);
-            return callback();
-          }, function(err) {
-            if (err) {
-              console.log(err);
-              return res.send(500).json(err);
-            } else {
-              return res.status(200).json(resData);
-            }
+          var rows = body.rows;
+          rows.forEach(function(item) {
+            key = item.key;
+            kv_content.get(key, function(err, data) {
+              var entities;
+              entities = data.features.entity;
+              entities.forEach(function(entity) {
+                var b = false;
+                if(!b) {
+                  interests.forEach(function(interest) {
+                    if(!b) {
+                      if(entity.text.indexOf(interest) > -1) {
+                        resData.push(data.url);
+                        b = true;
+                      }
+                    }
+                  });
+                }
+              });
+            });
+          }, function onSucess() {
+            res.status(200).json(resData);
           });
-        });
-      }
-    });
-    return // FINISH HERE;
+        }
+      });
+    }
   });
+    return // FINISH HERE;
+});
 
   router.get('/seed', function(req, res, next) {
     var client;
