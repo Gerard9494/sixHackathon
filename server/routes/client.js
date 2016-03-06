@@ -36,7 +36,6 @@
           var entities, resData;
           entities = data.features.entity;
           resData = [];
-          console.log(data);
           return async.each(entities, function(entity, callback) {
             var resEntity;
             console.log('entity ' + entity);

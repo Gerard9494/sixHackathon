@@ -27,7 +27,6 @@ router.get '/', (req, res, next) ->
       kv_content.get key, (err, data) ->
         entities = data.features.entity
         resData = []
-        console.log data
         async.each(entities, (entity, callback) ->
           console.log 'entity ' + entity
           resEntity = {
