@@ -292,7 +292,7 @@ h5 {
   font-family: 'Marvel', sans-serif;
   text-align: center;
   margin-bottom: 20px;
-  color: #000000;
+  color: #333333;
 }
 .h5__mod {
   color: #357FFF;
@@ -359,7 +359,7 @@ p {
     font: 20px/20px 'Marvel', sans-serif;
     text-align: center;
     margin-bottom: 20px;
-    color: #000000;
+    color: #333333;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -387,7 +387,7 @@ p {
     font: 20px/20px 'Marvel', sans-serif;
     text-align: center;
     margin-bottom: 20px;
-    color: #000000;
+    color: #333333;
   }
   .img_container {
     margin-bottom: 20px;
