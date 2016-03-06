@@ -29,8 +29,47 @@
     kv_content = cloudant.db.use('kv_content');
     resData = [];
     // START HERE;
+    kv_content.list(function(err, body) {
+      if (!err) {
+        var key = body.rows[0].key;
+        kv_content.get(key,function(err, data)  {
+          var entities = data.features.entity;
+          entities.forEach(function(entity) {
+            console.log(entity.text);
+            /*
+             IMPORTANT VALUES:
+
+             type: 'Country',
+             relevance: '0.215293',
+             count: '1',
+             text: 'Switzerland'
+
+             var type = entity.type;
+             var relevance = entity.relevance;
+             var count = entity.count;
+             var text = entity.text;
+             */
+          });
+        });
+      }
+    });
     // FINISH HERE;
     return res.status(200).json(resData);
+  });
+
+  router.get('/seed', function(req, res, next) {
+    var client;
+    client = new Client({
+      name: "SIXInvestor",
+      interests: ["copper", "aluminium", "zinc", "gold", "alcoa inc", "lme", "us fed"]
+    });
+    return client.save(function(error, savedClient, nInserted) {
+      if (!error) {
+        return res.status(200).send('ok');
+      } else {
+        return res.status(500).send('ops');
+      }
+    });
   });
 
   router.post('/', function(req, res, next) {

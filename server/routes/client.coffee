@@ -23,10 +23,19 @@ router.get '/', (req, res, next) ->
   resData = []
 
   `// START HERE`
-  
+
   `// FINISH HERE` 
 
   res.status(200).json resData
+
+router.get '/seed', (req, res, next) ->
+  client = new Client {
+    name: "SIXInvestor",
+    interests: [ "copper", "aluminium", "zinc", "gold", "alcoa inc", "lme", "us fed" ]
+  }
+  client.save (error, savedClient, nInserted) ->
+    if not error then res.status(200).send 'ok'
+    else res.status(500).send 'ops'
 
 ########
 # POST #
